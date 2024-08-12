@@ -1,0 +1,98 @@
+@use 'hero';
+@use 'content';
+@use 'colors';
+@use 'fonts';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: colors.$mainColor;
+}
+
+.signUp{
+    display: flex;
+    justify-content: space-between;
+    padding-top:3vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    &__title{
+        font-family: fonts.$mainFont;
+        font-weight: bold;
+        
+        &--is-hidden{
+            font-family: fonts.$mainFont;
+            font-weight: bold;
+            -webkit-transition: ease-in-out 0.5s;
+        }
+    }
+
+    &__button{
+        margin: 0 5px;
+        padding: 12px 8px;
+        font-family: fonts.$btnFont;
+        margin-bottom: 16px;
+        border: 1px solid black;
+        border-radius: 3px;
+        
+        &--is-hidden{
+            margin: 0 5px;
+            padding: 12px 8px;
+            font-family: fonts.$btnFont;
+            margin-bottom: 16px;
+            border: 1px solid black;
+            border-radius: 3px;
+            transition: ease-in-out .5s; 
+            visibility: hidden;
+            
+            a{
+                color: black;
+                text-decoration: none;
+            }
+        }
+
+        &:nth-of-type(1) {
+            background-color: colors.$mainBtnColor;
+            transition: ease-in-out 1s;
+            &:hover{
+                background-color: transparentize($color: colors.$mainBtnColor, $amount: 0.5);
+            }
+        }
+
+        &:nth-of-type(2){
+            background-color: colors.$secBtnColor;
+            &:hover{
+                background-color: transparentize($color: colors.$secBtnColor, $amount: 0.5);
+            }
+        }
+        
+        a{
+            color: black;
+            text-decoration: none;
+        }
+    }
+}
+
+.footer{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    padding: 5vw;
+    background-color: transparentize($color: colors.$secColor, $amount: 0.5);
+
+    &__title{
+        padding-bottom: 20px;
+        font-family: fonts.$secFont;
+    }
+    &__text{
+        font-family: fonts.$btnFont;
+    }
+}

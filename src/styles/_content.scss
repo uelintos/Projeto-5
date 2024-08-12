@@ -1,0 +1,53 @@
+@use 'fonts'; 
+
+.films{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+
+    &__title{
+        padding-top: 1vw;
+        padding-bottom: 3vw;
+        @media(max-width:1024px){
+            padding-bottom: 30px;
+            padding-top: 10px;
+        }
+        @media(max-width:764px){
+            padding-bottom: 30px;
+            padding-top: 10px;
+        }
+    }
+    
+    &__container{
+        &__title{
+            padding-bottom: 40px;
+            font-family: fonts.$mainFont;          
+        }
+        &__grid{
+           &__list{
+            font-family: fonts.$secFont;
+            display: grid;
+            grid-template-columns: repeat(3, 2fr);
+            list-style: none;
+            column-gap: 16vw;
+            @media(max-width:1024px){
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media(max-width:764px){
+                display: inline-table;
+                list-style: none;
+            }
+
+            &__img{
+                @media(max-width:1024px){
+                    max-width: 300px;
+                }
+                @media(max-width:764px){
+                    max-width: 300px;
+                }
+            }
+           }
+        }   
+    }
+}
